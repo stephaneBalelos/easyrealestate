@@ -1,0 +1,57 @@
+{
+	"settings": {
+		"appearanceTools": false,
+		"color": {
+			"palette": [
+				{
+					"color": "#e6e6e6",
+					"name": "Hintergrund",
+					"slug": "easyrealestate-bg"
+				}
+			]
+		}
+	},
+	"styles": {
+		"blocks": {
+			"core/button": {
+				"border": {
+					"bottom": {
+						"color": "#e6e6e6",
+						"style": "solid",
+						"width": "2px"
+					},
+					"color": null,
+					"left": {
+						"color": "transparent",
+						"style": "solid",
+						"width": "2px"
+					},
+					"radius": "0px",
+					"right": {
+						"color": "transparent",
+						"style": "solid",
+						"width": "2px"
+					},
+					"style": null,
+					"top": {
+						"color": "transparent",
+						"style": "solid",
+						"width": "2px"
+					},
+					"width": null
+				}
+			}
+		},
+		"spacing": {
+			"blockGap": "16px",
+			"padding": {
+				"bottom": "0px",
+				"left": "0px",
+				"right": "0px",
+				"top": "0px"
+			}
+		}
+	},
+	"version": 3,
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json"
+}
