@@ -1,3 +1,5 @@
+import '../styles/_easyrealestate-app.scss';
+
 export default function initEasyRealEstateApp() {
     const toggleButton = document.querySelector('.easyrealestate-app-view-toggle-button');
     const appContent = document.querySelector('.easyrealestate-app-content');
@@ -11,3 +13,7 @@ export default function initEasyRealEstateApp() {
         appContent.classList.toggle('easyrealestate-app-content-show-list');
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    initEasyRealEstateApp();
+});

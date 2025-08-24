@@ -77,3 +77,7 @@ get_header('no-nav');
         </div>
     </div>
 </main>
+
+<?php
+ wp_footer();
+?>

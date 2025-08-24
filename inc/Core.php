@@ -79,8 +79,16 @@ class Core
         $uri = EASYREALESTATE_URL . '/dist/assets/css/easyrealestate.css';
         wp_enqueue_style('easyrealestate-style', $uri, array(), EASYREALESTATE_VERSION);
 
-        $uri = EASYREALESTATE_URL . '/dist/assets/js/main.iife.js';
-        wp_enqueue_script('easyrealestate-script', $uri, array(), EASYREALESTATE_VERSION, array('strategy' => 'defer'));
+        $uri = EASYREALESTATE_URL . '/dist/assets/js/main.es.js';
+        wp_enqueue_script_module('easyrealestate-main-script', $uri, array(), EASYREALESTATE_VERSION);
+
+        $uri = EASYREALESTATE_URL . '/dist/assets/js/header.es.js';
+        wp_enqueue_script_module('easyrealestate-header-script', $uri, array(), EASYREALESTATE_VERSION);
+
+        if (is_page('garagenhofe')) {
+            $uri = EASYREALESTATE_URL . '/dist/assets/js/app.es.js';
+            wp_enqueue_script_module('easyrealestate-garagenhofe-script', $uri, array(), EASYREALESTATE_VERSION);
+        }
     }
 
     /**

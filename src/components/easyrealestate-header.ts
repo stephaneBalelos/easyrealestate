@@ -1,3 +1,6 @@
+import '../styles/_easyrealestate-header.scss';
+
+
 export default function initEasyRealEstateHeader() {
     const header = document.querySelector('.easyrealestate-header');
     const menuToggle = document.getElementById('menu-toggle');
@@ -11,3 +14,7 @@ export default function initEasyRealEstateHeader() {
         header.classList.toggle('is-nav-open');
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    initEasyRealEstateHeader();
+});

@@ -3,13 +3,19 @@ import { defineConfig } from 'vite'
 export default defineConfig({
     build: {
         lib: {
-            entry: 'src/main.ts',
+            entry: {
+                main: 'src/main.ts',
+                header: 'src/components/easyrealestate-header.ts',
+                app: 'src/components/easyrealestate-app.ts',
+
+            },
             name: 'easyrealestate',
             fileName: (format, entryName) => `assets/js/${entryName}.${format}.js`,
-            formats: ['iife'] 
+            formats: ['es'],
         },
         rollupOptions: {
             output: {
+                entryFileNames: 'assets/js/[name].[format].js',
                 assetFileNames: 'assets/[ext]/[name].[ext]',
             }
         },
