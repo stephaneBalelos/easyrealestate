@@ -1,57 +1,144 @@
 {
-	"settings": {
-		"appearanceTools": true,
-		"color": {
-			"palette": [
-				{
-					"color": "#e6e6e6",
-					"name": "Hintergrund",
-					"slug": "easyrealestate-bg"
-				}
-			]
-		}
-	},
-	"styles": {
-		"blocks": {
-			"core/button": {
-				"border": {
-					"bottom": {
-						"color": "#e6e6e6",
-						"style": "solid",
-						"width": "2px"
-					},
-					"color": null,
-					"left": {
-						"color": "transparent",
-						"style": "solid",
-						"width": "2px"
-					},
-					"radius": "0px",
-					"right": {
-						"color": "transparent",
-						"style": "solid",
-						"width": "2px"
-					},
-					"style": null,
-					"top": {
-						"color": "transparent",
-						"style": "solid",
-						"width": "2px"
-					},
-					"width": null
-				}
-			}
-		},
-		"spacing": {
-			"blockGap": "16px",
-			"padding": {
-				"bottom": "0px",
-				"left": "0px",
-				"right": "0px",
-				"top": "0px"
-			}
-		}
-	},
-	"version": 3,
-	"$schema": "https://schemas.wp.org/wp/6.8/theme.json"
+    "settings": {
+        "appearanceTools": true,
+        "color": {
+            "palette": [
+                {
+                    "color": "#e6e6e6",
+                    "name": "Hintergrund",
+                    "slug": "easyrealestate-bg"
+                }
+            ]
+        },
+        "typography": {
+            "customFontSize": true,
+            "fontFamilies": [
+                {
+                    "fontFace": [
+                        {
+                            "fontDisplay": "swap",
+                            "fontFamily": "roboto",
+                            "fontStretch": "normal",
+                            "fontStyle": "normal",
+                            "fontWeight": "300 900",
+                            "src": [
+                                "file:./assets/fonts/roboto/Roboto-VariableFont_wdth.ttf"
+                            ]
+                        },
+                        {
+                            "fontDisplay": "swap",
+                            "fontFamily": "roboto",
+                            "fontStretch": "normal",
+                            "fontStyle": "italic",
+                            "fontWeight": "300 900",
+                            "src": [
+                                "file:./assets/fonts/roboto/Roboto-Italic-VariableFont_wdth.ttf"
+                            ]
+                        }
+                    ],
+                    "fontFamily": "\"roboto\", sans-serif",
+                    "name": "Roboto",
+                    "slug": "roboto"
+                }
+            ]
+        }
+    },
+    "styles": {
+        "blocks": {
+            "core/button": {
+                "border": {
+                    "bottom": {
+                        "color": "#e6e6e6",
+                        "style": "solid",
+                        "width": "2px"
+                    },
+                    "color": null,
+                    "left": {
+                        "color": "transparent",
+                        "style": "solid",
+                        "width": "2px"
+                    },
+                    "radius": "0px",
+                    "right": {
+                        "color": "transparent",
+                        "style": "solid",
+                        "width": "2px"
+                    },
+                    "style": null,
+                    "top": {
+                        "color": "transparent",
+                        "style": "solid",
+                        "width": "2px"
+                    },
+                    "width": null
+                }
+            }
+        },
+        "spacing": {
+            "blockGap": "16px",
+            "padding": {
+                "bottom": "0px",
+                "left": "0px",
+                "right": "0px",
+                "top": "0px"
+            }
+        },
+        "elements": {
+            "h1": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--huge)",
+                    "fontWeight": "900",
+                    "lineHeight": "1.2"
+                }
+            },
+            "h2": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--x-large)",
+                    "fontWeight": "700",
+                    "lineHeight": "1.35"
+                }
+            },
+            "h3": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--large)",
+                    "fontWeight": "700",
+                    "lineHeight": "1.35"
+                }
+            },
+            "h4": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--medium)",
+                    "fontWeight": "700",
+                    "lineHeight": "1.4"
+                }
+            },
+            "h5": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--normal)",
+                    "fontWeight": "700",
+                    "lineHeight": "1.55"
+                }
+            },
+            "h6": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--small)",
+                    "fontWeight": "700",
+                    "lineHeight": "1.6"
+                }
+            },
+            "heading": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--roboto)"
+                }
+            }
+        },
+        "typography": {
+            "fontFamily": "var(--wp--preset--font-family--roboto)",
+            "fontSize": "var(--wp--preset--font-size--normal)",
+            "fontWeight": "400",
+            "lineHeight": "1.7"
+        }
+    },
+    "version": 3,
+    "$schema": "https://schemas.wp.org/wp/6.8/theme.json"
 }
