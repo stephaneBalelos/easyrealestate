@@ -1,5 +1,5 @@
 <?php
-get_header();
+get_header('no-nav');
 ?>
 
 <main>
@@ -15,8 +15,58 @@ get_header();
                 <div class="easyrealestate-app-list-items-container">
                     <div class="easyrealestate-app-list-items">
                         <div class="easyrealestate-app-list-item">
-                            <h2>Item Title</h2>
-                            <p>Item Description</p>
+                            <div class="easyrealestate-app-list-item-image">
+                                <img src="<?php echo EASYREALESTATE_URL . '/dist/garage-placeholder.jpg'; ?>" alt="<?php the_title(); ?>" />
+                            </div>
+                            <div class="easyrealestate-app-list-item-details">
+                                <h2>Garagenhof Beispiel 1</h2>
+                                <p>Beschreibung der Garage. Größe, Lage, Preis etc.</p>
+                            </div>
+                        </div>
+                        <div class="easyrealestate-app-list-item">
+                            <div class="easyrealestate-app-list-item-image">
+                                <img src="<?php echo EASYREALESTATE_URL . '/dist/garage-placeholder.jpg'; ?>" alt="<?php the_title(); ?>" />
+                            </div>
+                            <div class="easyrealestate-app-list-item-details">
+                                <h2>Garagenhof Beispiel 1</h2>
+                                <p>Beschreibung der Garage. Größe, Lage, Preis etc.</p>
+                            </div>
+                        </div>
+                        <div class="easyrealestate-app-list-item">
+                            <div class="easyrealestate-app-list-item-image">
+                                <img src="<?php echo EASYREALESTATE_URL . '/dist/garage-placeholder.jpg'; ?>" alt="<?php the_title(); ?>" />
+                            </div>
+                            <div class="easyrealestate-app-list-item-details">
+                                <h2>Garagenhof Beispiel 1</h2>
+                                <p>Beschreibung der Garage. Größe, Lage, Preis etc.</p>
+                            </div>
+                        </div>
+                        <div class="easyrealestate-app-list-item">
+                            <div class="easyrealestate-app-list-item-image">
+                                <img src="<?php echo EASYREALESTATE_URL . '/dist/garage-placeholder.jpg'; ?>" alt="<?php the_title(); ?>" />
+                            </div>
+                            <div class="easyrealestate-app-list-item-details">
+                                <h2>Garagenhof Beispiel 1</h2>
+                                <p>Beschreibung der Garage. Größe, Lage, Preis etc.</p>
+                            </div>
+                        </div>
+                        <div class="easyrealestate-app-list-item">
+                            <div class="easyrealestate-app-list-item-image">
+                                <img src="<?php echo EASYREALESTATE_URL . '/dist/garage-placeholder.jpg'; ?>" alt="<?php the_title(); ?>" />
+                            </div>
+                            <div class="easyrealestate-app-list-item-details">
+                                <h2>Garagenhof Beispiel 1</h2>
+                                <p>Beschreibung der Garage. Größe, Lage, Preis etc.</p>
+                            </div>
+                        </div>
+                        <div class="easyrealestate-app-list-item">
+                            <div class="easyrealestate-app-list-item-image">
+                                <img src="<?php echo EASYREALESTATE_URL . '/dist/garage-placeholder.jpg'; ?>" alt="<?php the_title(); ?>" />
+                            </div>
+                            <div class="easyrealestate-app-list-item-details">
+                                <h2>Garagenhof Beispiel 1</h2>
+                                <p>Beschreibung der Garage. Größe, Lage, Preis etc.</p>
+                            </div>
                         </div>
                     </div>
                 </div>

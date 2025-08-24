@@ -31,6 +31,98 @@
             }
         }
 
+        .easyrealestate-app-list {
+            display: flex;
+            flex-direction: column;
+            .easyrealestate-app-list-items-container {
+                flex: 1;
+                position: relative;
+                .easyrealestate-app-list-items {
+                    position: absolute;
+                    inset: 0;
+                    overflow-y: scroll;
+                    // Hide scrollbar
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                    
+
+                    .easyrealestate-app-list-item {
+                        display: flex;
+                        flex-direction: column;
+                        border-bottom: 1px solid var(--wp--preset--color--border);
+                        padding: 1rem 0;
+
+                        .easyrealestate-app-list-item-image {
+                            height: 200px;
+                            overflow: hidden;
+                            border-radius: var(--wp--custom--border-radius--medium);
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .easyrealestate-app-list-item-details {
+                            flex: 1;
+
+                            h2 {
+                                font-size: var(--wp--preset--font-size--medium);
+                                margin: 0 0 .5rem;
+                            }
+
+                            p {
+                                margin: 0;
+                            }
+                        }
+                    }
+
+                    @media screen and (min-width: 768px) {
+                        .easyrealestate-app-list-item {
+                            flex-direction: row;
+
+                            .easyrealestate-app-list-item-image {
+                                width: 300px;
+                            }
+
+                            .easyrealestate-app-list-item-details {
+                                padding-left: 1rem;
+                            }
+                        }
+                    }
+
+                    @media screen and (min-width: 1024px) {
+                        .easyrealestate-app-list-item {
+                            .easyrealestate-app-list-item-image {
+                                width: 200px;
+                                height: 100px;
+                            }
+
+                            .easyrealestate-app-list-item-details {
+                                padding-left: 1rem;
+                            }
+                        }
+                    }
+
+                    @media screen and (min-width: 1320px) {
+                        .easyrealestate-app-list-item {
+                            .easyrealestate-app-list-item-image {
+                                width: 300px;
+                                height: 150px;
+                            }
+
+                            .easyrealestate-app-list-item-details {
+                                padding-left: 1rem;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
     }
 
     .easyrealestate-app-view-toggle {
