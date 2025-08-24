@@ -41,6 +41,15 @@
                     "slug": "roboto"
                 }
             ]
+        },
+        "custom": {
+            "borderRadius": {
+                "zero": "0px",
+                "small": "4px",
+                "medium": "8px",
+                "large": "16px",
+                "pill": "999px"
+            }
         }
     },
     "styles": {

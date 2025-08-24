@@ -12,6 +12,18 @@
   }
 }
 
+@media screen and (max-width: 782px) {
+  html {
+    --wp-admin--admin-bar--height: 0px;
+    margin: 0 !important;
+
+    #wpadminbar {
+      display: none;
+    }
+  }
+
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -19,3 +31,4 @@ body {
 }
 
 @import 'styles/easyrealestate-app';
+@import 'styles/easyrealestate-header';

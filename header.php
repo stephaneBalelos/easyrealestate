@@ -11,8 +11,26 @@
 
 <body>
     <?php wp_body_open(); ?>
-    <!-- <header>
-        <h1><?php bloginfo('name'); ?></h1>
-        <h2><?php bloginfo('description'); ?></h2>
-        header
-    </header> -->
+    <header class="easyrealestate-header">
+        <div class="easyrealestate-header-inner">
+            <div class="easyrealestate-logo">
+                <?php
+                if (function_exists('the_custom_logo')) {
+                    the_custom_logo();
+                }
+                ?>
+                <a class="easyrealestate-logo-link" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+            </div>
+            <button id="menu-toggle" aria-label="<?php esc_attr_e('Toggle Menu', 'easyrealestate'); ?>">
+                &#9776;
+            </button>
+            <nav class="easyrealestate-navigation">
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'primary',
+                    'menu_id'        => 'primary-menu',
+                ));
+                ?>
+            </nav>
+        </div>
+    </header>
