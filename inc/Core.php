@@ -80,7 +80,7 @@ class Core
         wp_enqueue_style('easyrealestate-style', $uri, array(), EASYREALESTATE_VERSION);
 
         $uri = EASYREALESTATE_URL . '/dist/assets/js/main.iife.js';
-        wp_enqueue_script('easyrealestate-script', $uri, array(), EASYREALESTATE_VERSION,);
+        wp_enqueue_script('easyrealestate-script', $uri, array(), EASYREALESTATE_VERSION, array('strategy' => 'defer'));
     }
 
     /**
