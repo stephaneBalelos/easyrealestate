@@ -2,6 +2,7 @@
     width: 100%;
     overflow-x: hidden;
     position: relative;
+
     .easyrealestate-app-content {
         position: relative;
         height: 100dvh;
@@ -14,13 +15,22 @@
             transform: translateX(-100%);
         }
 
-        .easyrealestate-app-map {
-            min-width: 100%;
-        }
-
+        .easyrealestate-app-map,
         .easyrealestate-app-list {
             min-width: 100%;
+            padding: .5rem;
         }
+
+        .easyrealestate-app-map {
+            .map {
+                height: 100%;
+                width: 100%;
+                border-radius: 1rem;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+
     }
 
     .easyrealestate-app-view-toggle {
@@ -34,14 +44,17 @@
 @media screen and (min-width: 1024px) {
     .easyrealestate-app-container {
         .easyrealestate-app-content {
-            .easyrealestate-app-map,
-            .easyrealestate-app-list {
-                min-width: 50%;
-            }
 
             &.easyrealestate-app-content-show-list {
                 transform: translateX(0);
             }
+
+            .easyrealestate-app-map,
+            .easyrealestate-app-list {
+                min-width: 50%;
+                padding: 1rem;
+            }
+
         }
     }
 }

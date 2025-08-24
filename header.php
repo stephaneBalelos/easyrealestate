@@ -11,8 +11,8 @@
 
 <body>
     <?php wp_body_open(); ?>
-    <header>
+    <!-- <header>
         <h1><?php bloginfo('name'); ?></h1>
         <h2><?php bloginfo('description'); ?></h2>
         header
-    </header>
+    </header> -->
