@@ -4,9 +4,39 @@
         "color": {
             "palette": [
                 {
-                    "color": "#e6e6e6",
+                    "color": "#E2EBEF",
                     "name": "Hintergrund",
                     "slug": "easyrealestate-bg"
+                },
+                {
+                    "color": "#404040",
+                    "name": "Text",
+                    "slug": "easyrealestate-text"
+                },
+                {
+                    "color": "#F5FE8E",
+                    "name": "Primär",
+                    "slug": "easyrealestate-primary"
+                },
+                {
+                    "color": "#C5CC72",
+                    "name": "Primär Dunkel",
+                    "slug": "easyrealestate-primary-dark"
+                },
+                {
+                    "color": "#F5FE8E",
+                    "name": "Primär Hell",
+                    "slug": "easyrealestate-primary-light"
+                },
+                {
+                    "color": "#F5F7F9",
+                    "name": "Hintergrund Hell",
+                    "slug": "easyrealestate-bg-light"
+                },
+                {
+                    "color": "#888888",
+                    "name": "Text Hell",
+                    "slug": "easyrealestate-text-light"
                 }
             ]
         },
@@ -35,7 +65,7 @@
                         "min": "1.125rem"
                     },
                     "name": "Large",
-                    "size": "1.38rem",
+                    "size": "1.25rem",
                     "slug": "large"
                 },
                 {
@@ -98,33 +128,38 @@
         }
     },
     "styles": {
+        "color": {
+            "background": "var:preset|color|easyrealestate-bg",
+            "text": "var:preset|color|easyrealestate-text"
+        },
         "blocks": {
             "core/button": {
                 "border": {
-                    "bottom": {
-                        "color": "#e6e6e6",
-                        "style": "solid",
-                        "width": "2px"
-                    },
                     "color": null,
-                    "left": {
-                        "color": "transparent",
-                        "style": "solid",
-                        "width": "2px"
-                    },
-                    "radius": "0px",
-                    "right": {
-                        "color": "transparent",
-                        "style": "solid",
-                        "width": "2px"
-                    },
+                    "radius": "var:custom|border-radius|medium",
                     "style": null,
-                    "top": {
-                        "color": "transparent",
-                        "style": "solid",
-                        "width": "2px"
-                    },
                     "width": null
+                },
+                "variations": {
+                    "outline": {
+                        "color": {
+                            "background": "transparent",
+                            "text": "currentColor"
+                        },
+                        "border": {
+                            "color": "currentColor",
+                            "width": "2px"
+                        },
+                        "css": ".wp-block-button__link:not(.has-background):hover {background-color:color-mix(in srgb, currentColor 5%, transparent);}",
+                        "spacing": {
+                            "padding": {
+                                "bottom": "calc(1rem - 1px)",
+                                "left": "calc(2.25rem - 1px)",
+                                "right": "calc(2.25rem - 1px)",
+                                "top": "calc(1rem - 1px)"
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -183,6 +218,45 @@
             "heading": {
                 "typography": {
                     "fontFamily": "var(--wp--preset--font-family--roboto)"
+                },
+                "spacing": {
+                    "margin": {
+                        "bottom": ".5rem",
+                        "top": "0"
+                    }
+                }
+            },
+            "button": {
+                "color": {
+                    "background": "var:preset|color|easyrealestate-primary",
+                    "text": "var:preset|color|easyrealestate-text"
+                },
+                ":focus": {
+                    "outline": {
+                        "color": "var:preset|color|easyrealestate-primary-dark",
+                        "offset": "2px"
+                    }
+                },
+                ":hover": {
+                    "color": {
+                        "background": "color-mix(in srgb, var(--wp--preset--color--easyrealestate-primary) 85%, transparent)",
+                        "text": "var:preset|color|easyrealestate-text"
+                    },
+                    "border": {
+                        "color": "transparent"
+                    }
+                },
+                "spacing": {
+                    "padding": {
+                        "bottom": ".5rem",
+                        "left": "1.5rem",
+                        "right": "1.5rem",
+                        "top": ".5rem"
+                    }
+                },
+                "typography": {
+                    "fontSize": "var:preset|font-size|medium",
+                    "fontWeight": "700"
                 }
             }
         },
@@ -190,7 +264,7 @@
             "fontFamily": "var(--wp--preset--font-family--roboto)",
             "fontSize": "var(--wp--preset--font-size--normal)",
             "fontWeight": "400",
-            "lineHeight": "1.7"
+            "lineHeight": "1.3"
         }
     },
     "version": 3,
