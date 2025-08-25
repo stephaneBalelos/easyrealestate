@@ -7,12 +7,15 @@ let infobox: HTMLElement | null = null;
 
 function initEasyRealEstateApp() {
     const toggleButton = document.querySelector('.easyrealestate-app-view-toggle-button');
-    const appContent = document.querySelector('.easyrealestate-app-content');
-    
-    if (!toggleButton || !appContent) {
+    const appContainer = document.querySelector('.easyrealestate-app-container');
+
+    if (!toggleButton || !appContainer) {
         return;
     }
-    
+    const appContent = appContainer.querySelector('.easyrealestate-app-content');
+    if (!appContent) {
+        return;
+    }
     const mapContainer = appContent.querySelector('.easyrealestate-app-map');
     if (!mapContainer) {
         return;
@@ -34,7 +37,7 @@ function initEasyRealEstateApp() {
 
     toggleButton.addEventListener('click', () => {
         console.log('Toggle button clicked');
-        appContent.classList.toggle('easyrealestate-app-content-show-list');
+        appContainer.classList.toggle('easyrealestate-app-content-show-list');
     });
 
 }
