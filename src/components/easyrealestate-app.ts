@@ -99,7 +99,7 @@ function loadMarkers(markerClass: typeof google.maps.marker.AdvancedMarkerElemen
             const markerOptions = {
                 position: { lat, lng },
                 map: map,
-                content: getMarkerLayout(item.getAttribute('data-title') || 'item ', item.getAttribute('data-content') || ''),
+                content: getMarkerLayout(),
             };
             const newMarker = new markerClass(markerOptions);
             newMarker.addListener('click', () => {
@@ -113,7 +113,7 @@ function loadMarkers(markerClass: typeof google.maps.marker.AdvancedMarkerElemen
 
 
 
-function getMarkerLayout(title: string, content: string) {
+function getMarkerLayout() {
     const layout = document.createElement('div');
     layout.classList.add('easyrealestate-app-marker-layout');
     layout.innerHTML = `

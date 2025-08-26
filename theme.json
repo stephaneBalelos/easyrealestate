@@ -114,6 +114,33 @@
                     "fontFamily": "\"roboto\", sans-serif",
                     "name": "Roboto",
                     "slug": "roboto"
+                },
+                {
+                    "fontFace": [
+                        {
+                            "fontDisplay": "swap",
+                            "fontFamily": "Nunito Sans",
+                            "fontStretch": "normal",
+                            "fontStyle": "normal",
+                            "fontWeight": "300 900",
+                            "src": [
+                                "file:./assets/fonts/nunitosans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf"
+                            ]
+                        },
+                        {
+                            "fontDisplay": "swap",
+                            "fontFamily": "Nunito Sans",
+                            "fontStretch": "normal",
+                            "fontStyle": "italic",
+                            "fontWeight": "300 900",
+                            "src": [
+                                "file:./assets/fonts/nunitosans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf"
+                            ]
+                        }
+                    ],
+                    "fontFamily": "\"Nunito sans\", sans-serif",
+                    "name": "Nunito Sans",
+                    "slug": "nunitosans"
                 }
             ]
         },
@@ -217,7 +244,7 @@
             },
             "heading": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--roboto)"
+                    "fontFamily": "var(--wp--preset--font-family--nunitosans)"
                 },
                 "spacing": {
                     "margin": {
@@ -261,7 +288,7 @@
             }
         },
         "typography": {
-            "fontFamily": "var(--wp--preset--font-family--roboto)",
+            "fontFamily": "var(--wp--preset--font-family--nunitosans)",
             "fontSize": "var(--wp--preset--font-size--normal)",
             "fontWeight": "400",
             "lineHeight": "1.3"
