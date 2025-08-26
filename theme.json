@@ -4,7 +4,7 @@
         "color": {
             "palette": [
                 {
-                    "color": "#E2EBEF",
+                    "color": "#E8EDF1",
                     "name": "Hintergrund",
                     "slug": "easyrealestate-bg"
                 },
@@ -14,17 +14,17 @@
                     "slug": "easyrealestate-text"
                 },
                 {
-                    "color": "#F5FE8E",
+                    "color": "#1B4778",
                     "name": "Primär",
                     "slug": "easyrealestate-primary"
                 },
                 {
-                    "color": "#C5CC72",
+                    "color": "#0C2036",
                     "name": "Primär Dunkel",
                     "slug": "easyrealestate-primary-dark"
                 },
                 {
-                    "color": "#F5FE8E",
+                    "color": "#82B0E3",
                     "name": "Primär Hell",
                     "slug": "easyrealestate-primary-light"
                 },
@@ -256,7 +256,7 @@
             "button": {
                 "color": {
                     "background": "var:preset|color|easyrealestate-primary",
-                    "text": "var:preset|color|easyrealestate-text"
+                    "text": "var:preset|color|easyrealestate-bg"
                 },
                 ":focus": {
                     "outline": {
@@ -267,7 +267,7 @@
                 ":hover": {
                     "color": {
                         "background": "color-mix(in srgb, var(--wp--preset--color--easyrealestate-primary) 85%, transparent)",
-                        "text": "var:preset|color|easyrealestate-text"
+                        "text": "var:preset|color|easyrealestate-bg"
                     },
                     "border": {
                         "color": "transparent"
