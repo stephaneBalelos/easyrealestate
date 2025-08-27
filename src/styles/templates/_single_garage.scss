@@ -1,0 +1,14 @@
+.floating-cta {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+
+    .easyrealestate-button {
+        padding: 1rem 2rem;
+        border-radius: var(--wp--custom--border-radius--medium);
+        text-decoration: none;
+        
+    }
+}

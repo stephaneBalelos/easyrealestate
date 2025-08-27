@@ -1,9 +1,21 @@
 import '../styles/_easyrealestate-app.scss';
 import { Loader } from "@googlemaps/js-api-loader"
 
+
+// extends google maps Map prototype
+// Types
+declare global {
+    namespace google.maps {
+        interface Map {
+            panToWithOffset: (latlng: LatLng | LatLngLiteral, offsetX: number, offsetY: number) => void;
+        }
+    }
+}
+
 let map: google.maps.Map;
 let markers: Map<string, google.maps.marker.AdvancedMarkerElement> = new Map();
 let infobox: HTMLElement | null = null;
+
 
 function initEasyRealEstateApp() {
     const toggleButton = document.querySelector('.easyrealestate-app-view-toggle-button');
@@ -20,12 +32,12 @@ function initEasyRealEstateApp() {
     if (!mapContainer) {
         return;
     }
-    
+
     const mapElement = mapContainer.querySelector('.map');
     if (!mapElement) {
         return;
     }
-    
+
     initGoogleMaps(mapElement);
 
     infobox = appContent.querySelector('.easyrealestate-app-map-infobox');
@@ -60,7 +72,24 @@ async function initGoogleMaps(mapElement: Element) {
     });
 
     try {
-        const { Map } = await loader.importLibrary('maps');
+        const { Map, OverlayView } = await loader.importLibrary('maps');
+        // extend panTo method to include offset
+        Map.prototype.panToWithOffset = function (latlng, offsetX, offsetY) {
+            var map = this;
+            var ov = new OverlayView();
+            ov.onAdd = function () {
+                var proj = this.getProjection();
+                var aPoint = proj.fromLatLngToContainerPixel(latlng);
+                if (!aPoint) return;
+                aPoint.x = aPoint.x + offsetX;
+                aPoint.y = aPoint.y + offsetY;
+                var newLatLng = proj.fromContainerPixelToLatLng(aPoint);
+                if (!newLatLng) return;
+                map.panTo(newLatLng);
+            };
+            ov.draw = function () { };
+            ov.setMap(this);
+        };
         map = new Map(mapElement as HTMLElement, mapOptions);
     } catch (e) {
         console.error(e);
@@ -104,7 +133,7 @@ function loadMarkers(markerClass: typeof google.maps.marker.AdvancedMarkerElemen
             const newMarker = new markerClass(markerOptions);
             newMarker.addListener('click', () => {
                 showInfoBox(item.getAttribute('data-id') || '', item.getAttribute('data-title') || '', item.getAttribute('data-content') || '');
-                map.panTo({ lat, lng });
+                map.panToWithOffset(new google.maps.LatLng(lat, lng), 0, 125);
             });
             markers.set(item.getAttribute('data-id') || '', newMarker);
         }
@@ -138,7 +167,7 @@ function showInfoBox(id: string, title: string, content: string) {
         contentEl.innerHTML = content;
     }
 
-    if(!infobox.classList.contains('easyrealestate-app-map-infobox-visible')) {
+    if (!infobox.classList.contains('easyrealestate-app-map-infobox-visible')) {
         infobox.classList.add('easyrealestate-app-map-infobox-visible');
     }
 

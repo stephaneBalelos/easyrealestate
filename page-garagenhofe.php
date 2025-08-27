@@ -1,5 +1,10 @@
 <?php
 get_header('no-nav');
+
+$posts = get_posts(array(
+    'post_type' => 'garage',
+    'posts_per_page' => 9999,
+));
 ?>
 
 <main>
@@ -44,6 +49,7 @@ get_header('no-nav');
             <div class="easyrealestate-app-list">
                 <h1><?php the_title(); ?></h1>
                 <div class="easyrealestate-app-list-items-container">
+                    <?php if ($posts) : ?>
                     <div class="easyrealestate-app-list-items">
                         <div class="easyrealestate-app-list-item"
                             data-id="1"
@@ -143,6 +149,7 @@ get_header('no-nav');
                             </div>
                         </div>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

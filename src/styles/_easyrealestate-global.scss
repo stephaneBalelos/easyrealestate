@@ -1,0 +1,13 @@
+@import './templates/single_garage';
+
+@import '../styles/components/hero';
+@import '../styles/components/features_list';
+@import '../styles/components/badges';
+
+.easyrealestate-container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}

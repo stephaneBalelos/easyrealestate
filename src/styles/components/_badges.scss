@@ -1,0 +1,20 @@
+.easyrealestate-badge {
+    display: inline-block;
+    justify-content: flex-start;
+    align-items: start;
+    border-radius: var(--wp--custom--border-radius--medium);
+    font-size: var(--wp--preset--font-size--small);
+    padding: .25rem .5rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+
+    &.easyrealestate-badge-success {
+        background-color: var(--wp--preset--color--vivid-green-cyan);
+        color: var(--wp--preset--color--white);
+    }
+
+    &.easyrealestate-badge-error {
+        background-color: var(--wp--preset--color--vivid-red);
+        color: var(--wp--preset--color--white);
+    }
+}
