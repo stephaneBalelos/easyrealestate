@@ -22,13 +22,15 @@
                 <a class="easyrealestate-logo-link" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
             </div>
             <button id="menu-toggle" aria-label="<?php esc_attr_e('Toggle Menu', 'easyrealestate'); ?>">
-                &#9776;
+                <span class="bar"></span>
+                <span class="bar"></span>
             </button>
             <nav class="easyrealestate-navigation">
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'primary',
                     'menu_id'        => 'primary-menu',
+                    'menu_class'     => 'easyrealestate-menu',
                 ));
                 ?>
             </nav>
