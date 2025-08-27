@@ -55,7 +55,11 @@ $posts = get_posts(array(
             </div>
             <div class="easyrealestate-app-list">
                 <div class="easyrealestate-app-list-header">
-                    <h1><?php the_title(); ?></h1>
+                    <h1>
+                        <a href="#">
+                            <?php the_title(); ?>
+                        </a>
+                    </h1>
                 </div>
                 <div class="easyrealestate-app-list-items-container">
                     <?php if ($posts) : ?>

@@ -167,6 +167,14 @@
                     "style": null,
                     "width": null
                 },
+                "spacing": {
+                    "padding": {
+                        "bottom": "calc(1rem - 1px)",
+                        "left": "calc(2.25rem - 1px)",
+                        "right": "calc(2.25rem - 1px)",
+                        "top": "calc(1rem - 1px)"
+                    }
+                },
                 "variations": {
                     "outline": {
                         "color": {
