@@ -1,7 +1,7 @@
 .easyrealestate-badge {
-    display: inline-block;
+    display: inline-flex;
     justify-content: flex-start;
-    align-items: start;
+    align-items: center;
     border-radius: var(--wp--custom--border-radius--medium);
     font-size: var(--wp--preset--font-size--small);
     padding: .25rem .5rem;

@@ -14,7 +14,7 @@ declare global {
 
 let map: google.maps.Map;
 let markers: Map<string, google.maps.marker.AdvancedMarkerElement> = new Map();
-let infobox: HTMLElement | null = null;
+let infoboxes: HTMLElement[] = [];
 
 
 function initEasyRealEstateApp() {
@@ -40,8 +40,8 @@ function initEasyRealEstateApp() {
 
     initGoogleMaps(mapElement);
 
-    infobox = appContent.querySelector('.easyrealestate-app-map-infobox');
-    if (!infobox) {
+    infoboxes = Array.from(appContent.querySelectorAll('.easyrealestate-app-map-infobox'));
+    if (!infoboxes) {
         return;
     }
 
@@ -104,23 +104,31 @@ async function initGoogleMaps(mapElement: Element) {
 }
 
 function initInfoBox() {
-    if (!infobox) {
+    if (!infoboxes.length) {
         return;
     }
-    const closeButton = infobox.querySelector('[close-btn]');
-    if (closeButton) {
-        closeButton.addEventListener('click', hideInfoBox);
-    }
+
+    infoboxes.forEach(box => {
+        const closeBtn = box.querySelector('[close-btn]');
+        if (!closeBtn) {
+            return;
+        }
+        closeBtn.addEventListener('click', () => {
+            hideInfoBox();
+        });
+    });
 }
 
 function loadMarkers(markerClass: typeof google.maps.marker.AdvancedMarkerElement) {
     const items = document.querySelectorAll('.easyrealestate-app-list-item');
     items.forEach(item => {
+        let id = item.getAttribute('data-id');
         let latString = item.getAttribute('data-lat');
         let lngString = item.getAttribute('data-lng');
-        if (!latString || !lngString) {
-            return;
 
+
+        if (!latString || !lngString || !id) {
+            return;
         }
         const lat = parseFloat(latString);
         const lng = parseFloat(lngString);
@@ -132,14 +140,15 @@ function loadMarkers(markerClass: typeof google.maps.marker.AdvancedMarkerElemen
             };
             const newMarker = new markerClass(markerOptions);
             newMarker.addListener('click', () => {
-                showInfoBox(item.getAttribute('data-id') || '', item.getAttribute('data-title') || '', item.getAttribute('data-content') || '');
+                showInfoBox(
+                    id
+                );
                 map.panToWithOffset(new google.maps.LatLng(lat, lng), 0, 125);
             });
             markers.set(item.getAttribute('data-id') || '', newMarker);
         }
     });
 }
-
 
 
 function getMarkerLayout() {
@@ -153,23 +162,22 @@ function getMarkerLayout() {
     return layout;
 }
 
-function showInfoBox(id: string, title: string, content: string) {
+function showInfoBox(id: string) {
+    if (!infoboxes.length) {
+        return;
+    }
+
+    const infobox = infoboxes.find(box => box.getAttribute('data-id') === id);
     if (!infobox) {
         return;
     }
-    const titleEl = infobox.querySelector('[title]');
-    if (titleEl) {
-        titleEl.textContent = title;
+
+    for (let box of infoboxes) {
+        box.classList.remove('easyrealestate-app-map-infobox-visible');
     }
 
-    const contentEl = infobox.querySelector('[content]');
-    if (contentEl) {
-        contentEl.innerHTML = content;
-    }
+    infobox.classList.add('easyrealestate-app-map-infobox-visible');
 
-    if (!infobox.classList.contains('easyrealestate-app-map-infobox-visible')) {
-        infobox.classList.add('easyrealestate-app-map-infobox-visible');
-    }
 
     for (let [markerId, marker] of markers) {
         const content = marker.content as HTMLElement;
@@ -185,8 +193,8 @@ function showInfoBox(id: string, title: string, content: string) {
 }
 
 function hideInfoBox() {
-    if (infobox) {
-        infobox.classList.remove('easyrealestate-app-map-infobox-visible');
+    for (let box of infoboxes) {
+        box.classList.remove('easyrealestate-app-map-infobox-visible');
     }
 }
 
