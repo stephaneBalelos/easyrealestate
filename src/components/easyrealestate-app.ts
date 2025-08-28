@@ -48,7 +48,6 @@ function initEasyRealEstateApp() {
     initInfoBox();
 
     toggleButton.addEventListener('click', () => {
-        console.log('Toggle button clicked');
         appContainer.classList.toggle('easyrealestate-app-content-show-list');
     });
 
@@ -166,7 +165,7 @@ function loadMarkers(markerClass: typeof google.maps.marker.AdvancedMarkerElemen
                 content: getMarkerLayout(),
             };
             const newMarker = new markerClass(markerOptions);
-            newMarker.addListener('click', (marker: google.maps.marker.AdvancedMarkerElement) => {
+            newMarker.addListener('click', (_marker: google.maps.marker.AdvancedMarkerElement) => {
                 showInfoBox(id);
                 map.panToWithOffset(new google.maps.LatLng(lat, lng), 0, 125);
             });
