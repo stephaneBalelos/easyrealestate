@@ -13,14 +13,9 @@
     <?php wp_body_open(); ?>
     <header class="easyrealestate-header">
         <div class="easyrealestate-header-inner">
-            <div class="easyrealestate-logo">
-                <?php
-                if (function_exists('the_custom_logo')) {
-                    the_custom_logo();
-                }
-                ?>
-                <a class="easyrealestate-logo-link" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-            </div>
+            <a class="easyrealestate-logo" href="<?php echo esc_url(home_url('/')); ?>">
+                <img width="100" src="<?php echo esc_url(the_field('logo', 'option')); ?>" alt="Logo">
+            </a>
             <button id="menu-toggle" aria-label="<?php esc_attr_e('Toggle Menu', 'easyrealestate'); ?>">
                 <span class="bar"></span>
                 <span class="bar"></span>
