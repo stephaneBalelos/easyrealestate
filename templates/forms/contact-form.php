@@ -10,10 +10,10 @@ $thema = "Kontakt Anfrage";
 <div class="container">
     <div class="easyrealestate-form">
         <?php if ($item_name) : ?>
-            <h3>Jetzt Anfragen: "<?php echo esc_html($item_name); ?>"</h3>
+            <h3 class="easyrealestate-form-title">Jetzt Anfragen: "<?php echo esc_html($item_name); ?>"</h3>
             <?php $thema = "Anfrage zu \"$item_name\""; ?>
         <?php endif; ?>
-        <?php echo do_shortcode('[contact-form-7 id="d85e7a9" title="Kontaktformular" thema="'. esc_attr($thema) .'"]'); ?>
+        <?php echo do_shortcode('[contact-form-7 id="d85e7a9" title="Kontaktformular" html_class="easyrealestate-form thema="'. esc_attr($thema) .'"]'); ?>
     </div>
     <!-- Reference Form -->
     <!-- <form class="easyrealestate-form" aria-labelledby="contact-form-title">

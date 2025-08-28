@@ -3,6 +3,12 @@
 	padding: 1.5rem 1rem;
 	border-radius: var(--wp--custom--border-radius--large);
 	margin: 0 auto;
+
+    .easyrealestate-form-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
 }
 
 .easyrealestate-form-group {
@@ -12,9 +18,9 @@
 }
 
 .easyrealestate-label {
-	color: var(--wp--preset--color--easyrealestate-primary);
-	font-weight: 600;
-	margin-bottom: 0.5em;
+	color: var(--wp--preset--color--easyrealestate-primary-dark);
+	font-weight: 700;
+	margin-bottom: 0.25em;
 }
 
 .easyrealestate-hint {
@@ -26,16 +32,16 @@
 .easyrealestate-input,
 .easyrealestate-textarea {
 	padding: var(--wp--preset--spacing--20);
-	border: 1px solid var(--wp--preset--color--easyrealestate-primary-dark);
+	border: 1px solid var(--wp--preset--color--easyrealestate-primary-light);
 	border-radius: var(--wp--custom--border-radius--medium);
-	background: var(--wp--preset--color--easyrealestate-bg-light);
+	background: var(--wp--preset--color--white);
 	transition: border-color 0.2s;
 	outline: none;
 }
 
 .easyrealestate-input:focus,
 .easyrealestate-textarea:focus {
-	border-color: var(--wp--preset--color--easyrealestate-primary-dark);
+	border-color: var(--wp--preset--color--easyrealestate-primary-light);
     box-shadow: 0 0 0 2px var(--wp--preset--color--easyrealestate-primary-light);
 }
 
@@ -64,6 +70,22 @@
 .easyrealestate-input[type="email"] {
 	width: 100%;
 	box-sizing: border-box;
+}
+
+.easyrealestate-input[type="submit"] {
+    background: var(--wp--preset--color--easyrealestate-primary);
+    color: var(--wp--preset--color--white);
+    padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--40);
+    font-weight: 700;
+    border: none;
+    border-radius: var(--wp--custom--border-radius--medium);
+    cursor: pointer;
+    min-width: 150px;
+    margin: 0 auto;
+
+    &:hover {
+        background: var(--wp--preset--color--easyrealestate-primary-dark);
+    }
 }
 
 .easyrealestate-textarea {
