@@ -20,9 +20,8 @@
     .easyrealestate-app-view-toggle {
         position: absolute;
         z-index: 10;
-        bottom: 1rem;
-        left: 50%;
-        transform: translateX(-50%);
+        top: 5.5rem;
+        right: 1rem;
 
         .easyrealestate-app-view-toggle-button {
             display: flex;
@@ -51,7 +50,8 @@
 
     @media screen and (min-width: 768px) {
         .easyrealestate-app-view-toggle {
-            bottom: 2rem;
+            top: 5.5rem;
+            right: 1rem;
 
             .easyrealestate-app-view-toggle-button {
                 width: 3rem;

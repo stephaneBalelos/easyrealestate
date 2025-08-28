@@ -46,9 +46,12 @@
 
         .easyrealestate-app-list-item {
             flex-direction: column;
+            background-color: var(--wp--preset--color--white);
+            padding: .5rem;
 
             .easyrealestate-app-list-item-image {
                 width: 100%;
+                border-radius: var(--wp--custom--border-radius--medium);
 
                 .easyrealestate-app-map-infobox-close-btn {
                     position: absolute;

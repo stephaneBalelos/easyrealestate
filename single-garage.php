@@ -29,9 +29,11 @@ get_header();
             </li>
             <?php endforeach; ?>
         </ul>
-    </div>
 
-    <?php the_content(); ?>
+        <div class="easyrealestate-the-content">
+            <?php the_content(); ?>
+        </div>
+    </div>
 
     <?php get_template_part('templates/forms/contact', 'form', array(
         'item_id' => get_the_ID(),
