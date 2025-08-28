@@ -1,0 +1,78 @@
+.easyrealestate-app-map {
+    position: absolute;
+    inset: 0;
+
+    .map {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+
+        .easyrealestate-app-marker-layout {
+            background-color: var(--wp--preset--color--easyrealestate-bg);
+            padding: 1rem;
+            border-radius: var(--wp--custom--border-radius--pill);
+
+            &.easyrealestate-app-marker-layout-active {
+                background-color: var(--wp--preset--color--easyrealestate-primary);
+                color: var(--wp--preset--color--easyrealestate-bg);
+                z-index: 1;
+            }
+
+            .easyrealestate-app-marker-title {
+                font-weight: 600;
+                font-size: 1.125rem;
+            }
+        }
+    }
+
+    .easyrealestate-app-map-infobox {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        width: 100%;
+        max-width: 500px;
+        padding: 1rem;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        pointer-events: none;
+
+        &.easyrealestate-app-map-infobox-visible {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .easyrealestate-app-list-item {
+            flex-direction: column;
+
+            .easyrealestate-app-list-item-image {
+                width: 100%;
+
+                .easyrealestate-app-map-infobox-close-btn {
+                    position: absolute;
+                    top: .5rem;
+                    right: .5rem;
+                    line-height: 1;
+                    color: var(--wp--preset--color--easyrealestate-text);
+                    cursor: pointer;
+                    background-color: var(--wp--preset--color--easyrealestate-bg-light);
+                    border-radius: var(--wp--custom--border-radius--pill);
+                    border: 1px solid var(--wp--preset--color--easyrealestate-primary-dark);
+                    font-size: var(--wp--preset--font-size--medium);
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+
+            .easyrealestate-app-list-item-details {
+                padding: .5rem 0 0;
+            }
+        }
+    }
+}

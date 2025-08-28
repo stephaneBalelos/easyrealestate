@@ -69,17 +69,19 @@ $map_zoom = get_field('map_initial_zoom', 'option');
                 <?php endif; ?>
             </div>
             <div class="easyrealestate-app-list">
-                <div class="easyrealestate-app-list-header">
-                    <h1>
-                        <?php the_title(); ?>
-                    </h1>
-                </div>
-                <div class="easyrealestate-app-list-items-container">
-                    <div class="easyrealestate-app-list-items">
-                        <?php get_template_part('templates/loops/acf-garagen-post', 'list', array(
-                            'post_type' => 'garage',
-                            'posts_per_page' => 9999,
-                        )); ?>
+                <div class="easyrealestate-app-list-inner">
+                    <div class="easyrealestate-app-list-header">
+                        <h1>
+                            <?php the_title(); ?>
+                        </h1>
+                    </div>
+                    <div class="easyrealestate-app-list-items-container">
+                        <div class="easyrealestate-app-list-items">
+                            <?php get_template_part('templates/loops/acf-garagen-post', 'list', array(
+                                'post_type' => 'garage',
+                                'posts_per_page' => 9999,
+                            )); ?>
+                        </div>
                     </div>
                 </div>
             </div>
