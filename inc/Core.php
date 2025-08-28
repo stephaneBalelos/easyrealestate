@@ -66,6 +66,11 @@ class Core
     public function setup_theme()
     {
         // Add theme support, register menus, etc.
+
+        // Prevent Contact Form 7 from adding extra <p> and <br> tags
+        // For mail.
+        // For form output.
+        add_filter('wpcf7_autop_or_not', '__return_false');
     }
 
     /**

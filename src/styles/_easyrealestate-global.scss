@@ -1,8 +1,11 @@
+
+
 @import './templates/single_garage';
 
-@import '../styles/components/hero';
-@import '../styles/components/features_list';
-@import '../styles/components/badges';
+@import './components/hero';
+@import './components/features_list';
+@import './components/badges';
+@import './components/forms';
 
 .easyrealestate-container {
     max-width: 768px;
@@ -12,8 +15,8 @@
     margin-bottom: 6rem;
 }
 
-@media screen and (min-width: 768px) {
-    .easyrealestate-container {
+// @media screen and (min-width: 768px) {
+//     .easyrealestate-container {
 
-    }
-}
+//     }
+// }
