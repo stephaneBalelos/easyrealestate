@@ -1,13 +1,13 @@
 .easyrealestate-header {
-    --easyrealestate-header-padding-x: .5rem;
+    --easyrealestate-header-padding-x: 1rem;
     --easyrealestate-header-padding-y: .5rem;
     --easyrealestate-header-offset-top: calc(var(--wp-admin--admin-bar--height, 0px) * 1);
     position: fixed;
     top: calc(var(--easyrealestate-header-offset-top) + var(--easyrealestate-header-padding-y));
-    left: var(--easyrealestate-header-padding-x);
-    right: var(--easyrealestate-header-padding-x);
+    left: calc(var(--easyrealestate-header-padding-x) * 1);
+    right: calc(var(--easyrealestate-header-padding-x) * 1);
     z-index: 1000;
-    padding: calc(var(--easyrealestate-header-padding-y) * 1) calc(var(--easyrealestate-header-padding-x) * 2);
+    padding: calc(var(--easyrealestate-header-padding-y) * 1) calc(var(--easyrealestate-header-padding-x) * 1);
 
     background-color: var(--wp--preset--color--easyrealestate-bg);
     border-radius: var(--wp--custom--border-radius--large);

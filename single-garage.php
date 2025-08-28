@@ -15,6 +15,9 @@ get_header();
 
     <div class="easyrealestate-features-list-container">
         <h1><?php the_field('name'); ?></h1>
+        <p>
+            <?php the_field('description'); ?>
+        </p>
         <ul class="easyrealestate-features-list">
             <?php
             $features = get_field('features');
@@ -29,19 +32,24 @@ get_header();
     </div>
 
     <?php the_content(); ?>
+
+    <?php get_template_part('templates/forms/contact', 'form', array(
+        'item_id' => get_the_ID(),
+        'item_name' => get_field('name'),
+    )); ?>
 </div>
 
-<div class="floating-cta">
+<!-- <div class="floating-cta">
     <?php if (get_field('is_available')) : ?>
         <div class="wp-block-button is-style-fill">
             <a class="wp-block-button__link wp-element-button">Jetzt Anfragen</a>
         </div>
     <?php else : ?>
         <div class="wp-block-button is-style-fill">
-            <a class="wp-block-button__link wp-element-button">Auf der Warteliste anmelden</a>
+            <a class="wp-block-button__link wp-element-button" aria-disabled="true" tabindex="-1">Auf der Warteliste anmelden</a>
         </div>
     <?php endif; ?>
-</div>
+</div> -->
 
 
 <?php wp_footer(); ?>

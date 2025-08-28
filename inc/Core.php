@@ -56,6 +56,14 @@ class Core
         add_action('after_setup_theme', [$this, 'setup_theme']);
         add_action('wp_enqueue_scripts', array($this, 'enqueue'));
         add_action('enqueue_block_editor_assets', array($this, 'add_editor_styles'));
+
+        // Prevent Contact Form 7 from adding extra <p> and <br> tags
+        // For mail.
+        // For form output.
+        add_filter('wpcf7_autop_or_not', '__return_false');
+
+        // Pass parameters to contact form 7 via shortcode attributes
+        add_filter('shortcode_atts_wpcf7', [$this, 'custom_shortcode_atts_wpcf7_filter'], 10, 3);
     }
 
     /**
@@ -66,11 +74,6 @@ class Core
     public function setup_theme()
     {
         // Add theme support, register menus, etc.
-
-        // Prevent Contact Form 7 from adding extra <p> and <br> tags
-        // For mail.
-        // For form output.
-        add_filter('wpcf7_autop_or_not', '__return_false');
     }
 
     /**
@@ -104,5 +107,25 @@ class Core
     public function add_editor_styles()
     {
         // Add editor styles for Gutenberg.
+    }
+
+
+    /**
+     * Custom shortcode attributes for Contact Form 7.
+     *
+     * @param array $out    The output attributes.
+     * @param array $pairs  The shortcode attribute pairs.
+     * @param array $atts   The shortcode attributes.
+     * @return array
+     */
+    public function custom_shortcode_atts_wpcf7_filter($out, $pairs, $atts)
+    {
+        $my_attr = 'thema';
+
+        if (isset($atts[$my_attr])) {
+            $out[$my_attr] = $atts[$my_attr];
+        }
+
+        return $out;
     }
 }
