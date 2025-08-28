@@ -37,6 +37,11 @@
                     "color": "#888888",
                     "name": "Text Hell",
                     "slug": "easyrealestate-text-light"
+                },
+                {
+                    "color": "#F6BC27",
+                    "name": "Akzent",
+                    "slug": "easyrealestate-accent"
                 }
             ]
         },

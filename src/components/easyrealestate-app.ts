@@ -90,7 +90,7 @@ async function initGoogleMaps(mapElement: Element) {
     };
 
     const loader = new Loader({
-        apiKey: apiKey,
+        apiKey: "",
         version: "weekly",
     });
 
@@ -114,6 +114,9 @@ async function initGoogleMaps(mapElement: Element) {
             ov.setMap(this);
         };
         map = new Map(mapElement as HTMLElement, mapOptions);
+        map.addListener('click', () => {
+            hideInfoBox();
+        });
     } catch (e) {
         console.error(e);
     }
@@ -159,13 +162,12 @@ function loadMarkers(markerClass: typeof google.maps.marker.AdvancedMarkerElemen
             const markerOptions = {
                 position: { lat, lng },
                 map: map,
+                zIndex: 1,
                 content: getMarkerLayout(),
             };
             const newMarker = new markerClass(markerOptions);
-            newMarker.addListener('click', () => {
-                showInfoBox(
-                    id
-                );
+            newMarker.addListener('click', (marker: google.maps.marker.AdvancedMarkerElement) => {
+                showInfoBox(id);
                 map.panToWithOffset(new google.maps.LatLng(lat, lng), 0, 125);
             });
             markers.set(item.getAttribute('data-id') || '', newMarker);
@@ -179,7 +181,9 @@ function getMarkerLayout() {
     layout.classList.add('easyrealestate-app-marker-layout');
     layout.innerHTML = `
         <div class="easyrealestate-app-marker-content">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Design Icons by Pictogrammers - https://github.com/Templarian/MaterialDesign/blob/master/LICENSE --><path fill="currentColor" d="M22 9v11h-2v-9H4v9H2V9l10-4zm-3 3H5v2h14zm0 6H5v2h14zm0-3H5v2h14z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M62.72 3.5C62.95 3.5 63.14 3.69 63.14 3.92V62.72C63.14 62.95 62.95 63.14 62.72 63.14H44.66C44.6 60.32 42.29 58.04 39.45 58.04H27.19C24.35 58.04 22.04 60.32 21.98 63.14H3.92C3.69 63.14 3.5 62.95 3.5 62.72V3.92C3.5 3.69 3.69 3.5 3.92 3.5H62.72ZM62.72 0H3.92C1.76 0 0 1.76 0 3.92V62.72C0 64.88 1.76 66.64 3.92 66.64H25.48V63.25C25.48 62.31 26.25 61.54 27.19 61.54H39.45C40.39 61.54 41.16 62.31 41.16 63.25V66.64H62.72C64.88 66.64 66.64 64.88 66.64 62.72V3.92C66.64 1.76 64.88 0 62.72 0Z" fill="currentColor"/>
+            </svg>
         </div>
     `;
     return layout;
@@ -204,11 +208,12 @@ function showInfoBox(id: string) {
 
     for (let [markerId, marker] of markers) {
         const content = marker.content as HTMLElement;
-        console.log(markerId, id);
         if (content.classList.contains('easyrealestate-app-marker-layout-active')) {
             content.classList.remove('easyrealestate-app-marker-layout-active');
+            marker.zIndex = 1;
         }
         if (markerId === id) {
+            marker.zIndex = 100;
             content.classList.add('easyrealestate-app-marker-layout-active');
         }
     }
@@ -218,6 +223,13 @@ function showInfoBox(id: string) {
 function hideInfoBox() {
     for (let box of infoboxes) {
         box.classList.remove('easyrealestate-app-map-infobox-visible');
+    }
+
+    for (let [_markerId, marker] of markers) {
+        const content = marker.content as HTMLElement;
+        if (content.classList.contains('easyrealestate-app-marker-layout-active')) {
+            content.classList.remove('easyrealestate-app-marker-layout-active');
+        }
     }
 }
 
