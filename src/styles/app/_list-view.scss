@@ -100,7 +100,12 @@
         aspect-ratio: 3/2;
         overflow: hidden;
         border-radius: var(--wp--custom--border-radius--large);
-        box-shadow: var(--wp--preset--shadow--deep);
+        transition: all 0.3s ease;
+
+        &:hover {
+            box-shadow: var(--wp--preset--shadow--deep);
+            scale: 1.05;
+        }
 
         img {
             width: 100%;

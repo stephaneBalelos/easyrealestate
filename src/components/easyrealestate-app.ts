@@ -89,7 +89,7 @@ async function initGoogleMaps(mapElement: Element) {
     };
 
     const loader = new Loader({
-        apiKey: "",
+        apiKey: apiKey,
         version: "weekly",
     });
 

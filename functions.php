@@ -35,7 +35,7 @@ function bootstrap() {
 function define_constants() {
     // Define theme version.
     if ( ! defined( 'EASYREALESTATE_VERSION' ) ) {
-        define( 'EASYREALESTATE_VERSION', '0.1.0' );
+        define( 'EASYREALESTATE_VERSION', '0.2.2' );
     }
 
     // Define theme directory.

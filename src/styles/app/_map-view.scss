@@ -71,6 +71,11 @@
                 width: 100%;
                 border-radius: var(--wp--custom--border-radius--medium);
 
+                &:hover {
+                    box-shadow: none;
+                    scale: 1;
+                }
+
                 .easyrealestate-app-map-infobox-close-btn {
                     position: absolute;
                     top: .5rem;
