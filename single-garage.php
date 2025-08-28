@@ -14,15 +14,27 @@ get_header();
     </div>
 
     <div class="easyrealestate-features-list-container">
-        <div class="features-list-header">
-            <div class="features-list-header-content">
+        <?php if (!get_field('is_available')) : ?>
+        <div class="easyrealestate-features-list-top">
+            <div class="easyrealestate-alert is-error">
+                <div class="easyrealestate-alert-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-10 10c0 5.25 4.25 9.5 9.5 9.95V22h1v-1.05C17.75 21.5 22 17.25 22 12a10 10 0 0 0-10-10zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                </div>
+                <div class="easyrealestate-alert-content">
+                    <strong>Keine Verfügbarkeit:</strong> Auf diesen Garagenhof ist momentan keine Verfügbarkeit gegeben.
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+        <div class="easyrealestate-features-list-header">
+            <div class="easyrealestate-features-list-header-content">
                 <h1><?php the_field('name'); ?></h1>
                 <p>
                     <?php the_field('description'); ?>
                 </p>
             </div>
             <?php if (get_field('datei')) : ?>
-            <div class="features-list-header-action">
+            <div class="easyrealestate-features-list-header-action">
                 <div class="wp-block-button is-style-fill">
                     <a href="<?php echo esc_url(get_field('datei')); ?>" target="_blank" class="wp-block-button__link wp-element-button">
                         <span>Flyer herunterladen</span>
