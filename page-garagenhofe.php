@@ -5,13 +5,24 @@ $posts = get_posts(array(
     'post_type' => 'garage',
     'posts_per_page' => 9999,
 ));
+
+$gm_api_key = get_field('gm_api_key', 'option');
+$gm_map_id = get_field('gm_map_id', 'option');
+$map_center = get_field('map_center', 'option');
+$map_zoom = get_field('map_initial_zoom', 'option');
 ?>
 
 <main>
     <div class="easyrealestate-app-container">
         <div class="easyrealestate-app-content">
             <div class="easyrealestate-app-map">
-                <div class="map" style="background-image: url(<?php echo EASYREALESTATE_URL . '/dist/map.png'; ?>);">
+                <div class="map"
+                    api-key="<?php echo esc_attr($gm_api_key); ?>"
+                    map-id="<?php echo esc_attr($gm_map_id); ?>"
+                    center-lat="<?php echo esc_attr($map_center['latitude']); ?>"
+                    center-lng="<?php echo esc_attr($map_center['longitude']); ?>"
+                    zoom="<?php echo esc_attr($map_zoom); ?>"
+                >
                 </div>
                 <div class="easyrealestate-app-map-header">
                     <?php

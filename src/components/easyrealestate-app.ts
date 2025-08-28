@@ -55,15 +55,38 @@ function initEasyRealEstateApp() {
 }
 
 async function initGoogleMaps(mapElement: Element) {
-    // 53.53238971683533, 8.106689978965917
+    const apiKey = mapElement.getAttribute('api-key');
+    const mapId = mapElement.getAttribute('map-id');
+    const centerLatString = mapElement.getAttribute('center-lat');
+    const centerLngString = mapElement.getAttribute('center-lng');
+    const zoomString = mapElement.getAttribute('zoom');
+
+    if (!apiKey || !mapId) {
+        console.warn('Google Maps API key or map ID is missing');
+        return;
+    }
+
+    if (!centerLatString || !centerLngString || !zoomString) {
+        console.warn('Google Maps center or zoom level is missing');
+        return;
+    }
+
+    const centerLat = parseFloat(centerLatString);
+    const centerLng = parseFloat(centerLngString);
+    const zoom = parseInt(zoomString);
+
+    if (isNaN(centerLat) || isNaN(centerLng) || isNaN(zoom)) {
+        console.warn('Google Maps center or zoom level is invalid');
+        return;
+    }
 
     const mapOptions = {
-        center: { lat: 53.53238971683533, lng: 8.106689978965917 },
-        zoom: 14,
+        center: { lat: centerLat, lng: centerLng },
+        zoom: zoom,
         zoomControl: false,
         cameraControl: false,
         fullscreenControl: false,
-        mapId: "8c1e6a9bed70aa6c8b8bbedb"
+        mapId: mapId
     };
 
     const loader = new Loader({
