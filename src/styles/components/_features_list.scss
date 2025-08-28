@@ -8,6 +8,31 @@
         font-size: var(--wp--preset--font-size--large);
     }
 
+    .features-list-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: var(--wp--preset--spacing--30);
+
+        .features-list-header-action {
+            .wp-block-button__link.wp-element-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    margin-left: var(--wp--preset--spacing--30);
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .features-list-header {
+            flex-direction: row;
+        }
+    }
+
     .easyrealestate-features-list {
         padding: 0;
         margin: 0;
