@@ -77,6 +77,13 @@
             }
         }
 
+        @media screen and (min-width: 1320px) {
+            .easyrealestate-app-list-items {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
 
     }
 }

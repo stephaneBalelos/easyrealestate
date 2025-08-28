@@ -1,0 +1,45 @@
+.easyrealestate-footer {
+    padding: 1rem 0;
+
+    .easyrealestate-footer-content {
+        width: 100%;
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 0 1rem;
+
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+
+        .copyright {
+            color: var(--wp--preset--color--easyrealestate-text-light);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .footer-menu {
+            ul.easyrealestate-footer-menu {
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                gap: 1.5rem;
+
+                li {
+                    list-style: none;
+
+                    a {
+                        display: block;
+                        padding: .5rem 0;
+                        text-decoration: none;
+                        color: var(--wp--preset--color--easyrealestate-text);
+                        font-weight: 700;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+    }
+}

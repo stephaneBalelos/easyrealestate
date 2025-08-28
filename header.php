@@ -24,7 +24,8 @@
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'primary',
-                    'menu_id'        => 'primary-menu',
+                    'menu'        => 'primary-menu',
+                    'depth'         => 0,
                     'menu_class'     => 'easyrealestate-menu',
                 ));
                 ?>

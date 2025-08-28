@@ -102,11 +102,9 @@
             transition: max-height 0.3s ease;
             will-change: max-height;
 
-            .easyrealestate-menu {
-                padding-top: 1rem;
-
-                ul {
+                ul.easyrealestate-menu  {
                     padding: 0;
+                    padding-top: 1rem;
                     margin: 0;
 
                     li {
@@ -121,7 +119,6 @@
                         }
                     }
                 }
-            }
         }
     }
 }
@@ -139,6 +136,8 @@
         border-radius: var(--wp--custom--border-radius--pill);
 
         padding: calc(var(--easyrealestate-header-padding-y) * .5) calc(var(--easyrealestate-header-padding-x) * 2);
+
+        box-shadow: var(--wp--preset--shadow--deep);
 
         &.is-nav-open {
             .easyrealestate-header-inner {
@@ -159,9 +158,8 @@
                 max-height: unset;
                 min-width: unset;
 
-                .easyrealestate-menu {
-                    padding-top: 0;
-                    ul {
+                    ul.easyrealestate-menu {
+                        padding: 0;
                         display: flex;
                         gap: 1.5rem;
 
@@ -173,7 +171,6 @@
                             }
                         }
                     }
-                }
             }
         }
     }
