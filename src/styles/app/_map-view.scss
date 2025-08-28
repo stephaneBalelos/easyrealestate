@@ -78,4 +78,30 @@
             }
         }
     }
+
+    @media screen and (min-width: 1024px) {
+         .easyrealestate-app-map-infobox {
+            max-width: 400px;
+
+            .easyrealestate-app-list-item {
+                .easyrealestate-app-list-item-image {
+                    aspect-ratio: 2 / 1;
+                }
+            }
+         }
+    }
+
+    @media screen and (min-width: 1320px) {
+         .easyrealestate-app-map-infobox {
+            max-width: 500px;
+
+            .easyrealestate-app-list-item {
+                .easyrealestate-app-list-item-image {
+                    aspect-ratio: 3 / 2;
+                }
+            }
+         }
+    }
+
+    
 }

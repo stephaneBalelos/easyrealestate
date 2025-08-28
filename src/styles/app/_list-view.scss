@@ -73,30 +73,11 @@
         @media screen and (min-width: 1024px) {
             .easyrealestate-app-list-items {
                 display: grid;
-                grid-template-columns: repeat(1, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
 
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .easyrealestate-app-list {
-        --easyrealestate-app-list-width: 400;
-        max-width: 400px;
-        background-color: transparent;
-        border-top-left-radius: var(--wp--custom--border-radius--large);
-        border-bottom-left-radius: var(--wp--custom--border-radius--large);
-        box-shadow: none;
-        padding-right: 1rem;
-        padding-bottom: 2rem;
-        transform: translate(0);
-
-        .easyrealestate-app-list-inner {
-            background-color: var(--wp--preset--color--white);
-            box-shadow: var(--wp--preset--shadow--deep);
-        }
     }
 }
 
