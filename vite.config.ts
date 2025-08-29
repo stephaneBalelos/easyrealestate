@@ -7,6 +7,7 @@ export default defineConfig({
                 main: 'src/main.ts',
                 header: 'src/components/easyrealestate-header.ts',
                 app: 'src/components/easyrealestate-app.ts',
+                forms: 'src/components/easyrealestate-forms.ts',
 
             },
             name: 'easyrealestate',

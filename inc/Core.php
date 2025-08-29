@@ -96,6 +96,9 @@ class Core
         $uri = EASYREALESTATE_URL . '/dist/assets/js/header.es.js';
         wp_enqueue_script_module('easyrealestate-header-script', $uri, array(), EASYREALESTATE_VERSION);
 
+        $uri = EASYREALESTATE_URL . '/dist/assets/js/forms.es.js';
+        wp_enqueue_script_module('easyrealestate-forms-script', $uri, array(), EASYREALESTATE_VERSION);
+
         if (is_page('garagenhofe')) {
             $uri = EASYREALESTATE_URL . '/dist/assets/js/app.es.js';
             wp_enqueue_script_module('easyrealestate-garagenhofe-script', $uri, array(), EASYREALESTATE_VERSION);
@@ -123,10 +126,12 @@ class Core
      */
     public function custom_shortcode_atts_wpcf7_filter($out, $pairs, $atts)
     {
-        $my_attr = 'thema';
+        $my_attrs = array('thema', 'garage_name');
 
-        if (isset($atts[$my_attr])) {
-            $out[$my_attr] = $atts[$my_attr];
+        foreach ($my_attrs as $my_attr) {
+            if (isset($atts[$my_attr])) {
+                $out[$my_attr] = $atts[$my_attr];
+            }
         }
 
         return $out;
