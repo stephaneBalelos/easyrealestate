@@ -74,6 +74,9 @@ class Core
     public function setup_theme()
     {
         // Add theme support, register menus, etc.
+
+        // Add ShortCode for garage Listing
+        add_shortcode('garage_listing', [$this, 'render_garage_listing']);
     }
 
     /**
@@ -127,5 +130,28 @@ class Core
         }
 
         return $out;
+    }
+
+    /**
+     * Render garage listing.
+     *
+     * @param array $atts Shortcode attributes.
+     * @return string
+     */
+    public function render_garage_listing($atts)
+    {
+        // Shortcode logic for rendering garage listing.
+        $output = '';
+        $output .= '<div class="easyrealestate-garage-listing">';
+        // Load garage listing template part
+        ob_start();
+        get_template_part('templates/loops/acf-garagen-post', 'list', array(
+            'post_type' => 'garage',
+            'posts_per_page' => 9999,
+        ));
+        $output .= ob_get_clean();
+        $output .= '</div>';
+
+        return $output;
     }
 }
