@@ -12,6 +12,7 @@
             ));
             ?>
         </div>
+        <a id="dock-26-cookies-trigger-cc" href="#">Cookies</a>
     </div>
 </footer>
     <?php wp_footer(); ?>

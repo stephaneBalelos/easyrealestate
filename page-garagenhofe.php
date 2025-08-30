@@ -6,6 +6,7 @@ $posts = get_posts(array(
     'posts_per_page' => 9999,
 ));
 
+$cookie_category_id = get_field('cookie_kategorie_id', 'option');
 $gm_api_key = get_field('gm_api_key', 'option');
 $gm_map_id = get_field('gm_map_id', 'option');
 $map_center = get_field('map_center', 'option');
@@ -17,11 +18,21 @@ $map_zoom = get_field('map_initial_zoom', 'option');
         <div class="easyrealestate-app-content">
             <div class="easyrealestate-app-map">
                 <div class="map"
+                    style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/dist/map.png'); ?>');"
+                    dock26-cookie-category-id="<?php echo esc_attr($cookie_category_id); ?>"
                     api-key="<?php echo esc_attr($gm_api_key); ?>"
                     map-id="<?php echo esc_attr($gm_map_id); ?>"
                     center-lat="<?php echo esc_attr($map_center['latitude']); ?>"
                     center-lng="<?php echo esc_attr($map_center['longitude']); ?>"
                     zoom="<?php echo esc_attr($map_zoom); ?>">
+                    <div class="map-overlay">
+                        <div class="map-no-cookies">
+                            <p>Um die Karte zu sehen, müssen Sie die Cookies von Google Maps akzeptieren.</p>
+                            <div class="wp-block-button is-style-fill">
+                                <button id="dock-26-cookies-trigger-cc" class="map-accept-cookies-button wp-block-button__link wp-element-button">Cookies-Einstellungen</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <?php if ($posts) : ?>
                     <?php foreach ($posts as $post) : setup_postdata($post); ?>

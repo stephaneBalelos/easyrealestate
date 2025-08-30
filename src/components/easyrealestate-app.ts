@@ -38,7 +38,35 @@ function initEasyRealEstateApp() {
         return;
     }
 
-    initGoogleMaps(mapElement);
+    const DOCK26_COOKIES_CATEGORY_ID = mapElement.getAttribute('dock26-cookie-category-id');
+
+    if (!DOCK26_COOKIES_CATEGORY_ID) {
+        console.warn('Google Maps cookie category ID is missing');
+        initGoogleMaps(mapElement);
+        return;
+    }
+
+    window.addEventListener('cc:onConsent', ($event: CustomEventInit) => {
+        if ($event.detail) {
+            if ($event.detail.cookie.categories && $event.detail.cookie.categories.includes(DOCK26_COOKIES_CATEGORY_ID)) {
+                console.log('Google Maps consent given');
+                initGoogleMaps(mapElement);
+            }
+        }
+    });
+
+    window.addEventListener('cc:onChange', ($event: CustomEventInit) => {
+        if ($event.detail) {
+            if ($event.detail.cookie.categories && $event.detail.cookie.categories.includes(DOCK26_COOKIES_CATEGORY_ID)) {
+                console.log('Google Maps consent given');
+                initGoogleMaps(mapElement);
+            } else {
+                // Reload the page or reset the map
+                location.reload();
+            }
+        }
+    });
+
 
     infoboxes = Array.from(appContent.querySelectorAll('.easyrealestate-app-map-infobox'));
     if (!infoboxes) {
@@ -232,6 +260,6 @@ function hideInfoBox() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    initEasyRealEstateApp();
-});
+initEasyRealEstateApp();
+
+
