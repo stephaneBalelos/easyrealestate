@@ -41,7 +41,8 @@
         padding: 0;
         margin: 0;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        // Minimum 1 column, maximum 3 columns
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: var(--wp--preset--spacing--30);
 
         .easyrealestate-feature-item {
