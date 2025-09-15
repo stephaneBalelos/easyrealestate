@@ -99,6 +99,9 @@ class Core
         $uri = EASYREALESTATE_URL . '/dist/assets/js/forms.es.js';
         wp_enqueue_script_module('easyrealestate-forms-script', $uri, array(), EASYREALESTATE_VERSION);
 
+        $uri = EASYREALESTATE_URL . '/dist/assets/js/sliders.es.js';
+        wp_enqueue_script_module('easyrealestate-sliders-script', $uri, array(), EASYREALESTATE_VERSION);
+
         if (is_page('garagenhofe')) {
             $uri = EASYREALESTATE_URL . '/dist/assets/js/app.es.js';
             wp_enqueue_script_module('easyrealestate-garagenhofe-script', $uri, array(), EASYREALESTATE_VERSION);

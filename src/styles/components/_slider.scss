@@ -1,0 +1,86 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/thumbs';
+
+.easyrealestate-slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--wp--custom--border-radius--large);
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        opacity: .2;
+        z-index: 2;
+    }
+
+    .easyrealestate-slider-slide {
+        position: relative;
+        border-radius: var(--wp--custom--border-radius--large);
+        aspect-ratio: 3/2;
+        overflow: hidden;
+
+        .easyrealestate-slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        border-radius: var(--wp--custom--border-radius--large);
+        &.easyrealestate-slider-button-prev {
+            background-color: var(--wp--preset--color--easyrealestate-bg);
+
+            .swiper-navigation-icon {
+                transform: none;
+            }
+        }
+        &.easyrealestate-slider-button-next {
+            background-color: var(--wp--preset--color--easyrealestate-bg);
+        }
+
+        .swiper-navigation-icon {
+            width: 2rem;
+            height: 2rem;
+            color: var(--wp--preset--color--easyrealestate-primary);
+        }
+    }
+}
+
+.easyrealestate-slider-thumbnails {
+    margin-top: .5rem;
+    .easyrealestate-slider-thumbnail-slide {
+        border-radius: var(--wp--custom--border-radius--medium);
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid transparent;
+        aspect-ratio: 3/2;
+
+        .easyrealestate-slider-thumbnail-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .3s ease;
+            opacity: .7;
+        }
+        &:hover .easyrealestate-slider-thumbnail-image {
+            opacity: 1;
+        }
+
+        &.swiper-slide-thumb-active {
+            border-color: var(--wp--preset--color--easyrealestate-primary);
+            .easyrealestate-slider-thumbnail-image {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .easyrealestate-slider-thumbnails {
+        margin-top: 1rem;
+    }
+}

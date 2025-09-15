@@ -8,6 +8,7 @@ export default defineConfig({
                 header: 'src/components/easyrealestate-header.ts',
                 app: 'src/components/easyrealestate-app.ts',
                 forms: 'src/components/easyrealestate-forms.ts',
+                sliders: 'src/components/easyrealestate-sliders.ts',
 
             },
             name: 'easyrealestate',
