@@ -112,6 +112,8 @@ async function initGoogleMaps(mapElement: Element) {
         zoom: zoom,
         zoomControl: false,
         cameraControl: false,
+        streetViewControl: false,
+        mapTypeControl: false,
         fullscreenControl: false,
         mapId: mapId
     };
