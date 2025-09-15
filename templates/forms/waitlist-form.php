@@ -26,10 +26,11 @@ $posts = get_posts(array(
         </div>
         <div garage-select="waitlist-form" class="easyrealestate-form-group easyrealestate-form-group--select">
             <?php foreach ($posts as $post) : setup_postdata($post); ?>
+                <?php $main_image = get_field('bild'); ?>
                 <div class="easyrealestate-form-group--select-item">
                     <input type="radio" name="garages" id="<?php the_ID(); ?>" value="<?php the_field('name'); ?>">
                     <label for="<?php the_ID() ?>">
-                        <img width="50" src="<?php the_field('bild'); ?>" alt="<?php the_field('name'); ?>" class="easyrealestate-form-group--select-item-image">
+                        <img width="50" src="<?php echo esc_url($main_image['sizes']['thumbnail']); ?>" alt="<?php the_field('name'); ?>" class="easyrealestate-form-group--select-item-image">
                         <div class="easyrealestate-form-group--select-item-details">
                             <h5><?php the_field('name'); ?></h5>
                             <p><?php the_field('description'); ?></p>

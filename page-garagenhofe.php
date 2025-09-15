@@ -36,11 +36,12 @@ $map_zoom = get_field('map_initial_zoom', 'option');
                 </div>
                 <?php if ($posts) : ?>
                     <?php foreach ($posts as $post) : setup_postdata($post); ?>
+                        <?php $main_image = get_field('bild'); ?>
                         <div data-id="<?php echo $post->ID; ?>" class="easyrealestate-app-map-infobox">
                             <div class="easyrealestate-app-list-item">
                                 <div class="easyrealestate-app-list-item-image">
                                     <a href="<?php echo get_permalink(); ?>">
-                                        <img src="<?php echo the_field('bild') ?>" alt="<?php the_field('name') ?>" />
+                                        <img src="<?php echo esc_url($main_image['sizes']['medium_large']); ?>" alt="<?php the_field('name'); ?>" />
                                     </a>
                                     <?php if (get_field('is_available')) : ?>
                                         <div class="easyrealestate-app-list-item-details-available">

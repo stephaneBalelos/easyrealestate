@@ -14,18 +14,19 @@ $posts = get_posts(array(
     <?php foreach ($posts as $post) : setup_postdata($post); ?>
         <?php
         $coordinates = get_field('coordinate');
+        $main_image = get_field('bild');
         ?>
         <div class="easyrealestate-app-list-item"
             data-id="<?php the_ID(); ?>"
             data-title="<?php the_field('name') ?>"
             data-description="<?php the_field('description'); ?>"
-            data-img="<?php echo the_field('bild') ?>"
+            data-img="<?php echo esc_url($main_image['sizes']['medium_large']); ?>"
             data-available="<?php echo get_field('is_available') ? '1' : '0' ?>"
             data-lat="<?php echo $coordinates['lat'] ?>"
             data-lng="<?php echo $coordinates['lng'] ?>">
             <div class="easyrealestate-app-list-item-image">
                 <a href="<?php echo get_permalink(); ?>">
-                    <img src="<?php echo the_field('bild') ?>" alt="<?php the_field('name') ?>" />
+                    <img src="<?php echo esc_url($main_image['sizes']['medium_large']); ?>" alt="<?php the_field('name'); ?>" />
                 </a>
                 <?php if (get_field('is_available')) : ?>
                     <div class="easyrealestate-app-list-item-details-available">

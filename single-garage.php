@@ -6,16 +6,17 @@ get_header();
     <?php
     $images = [];
     $thumbnails = [];
+    $main_image = get_field('bild');
     $bilder = get_field('bilder');
 
     // Push main image to the front of the array
     array_unshift($images, [
-        'url' => get_field('bild'),
+        'url' => $main_image['sizes']['medium_large'],
         'description' => get_field('name'),
     ]);
     // Push main image to the front of the array
     array_unshift($thumbnails, [
-        'url' => get_field('bild'),
+        'url' => $main_image['sizes']['thumbnail'],
         'description' => get_field('name'),
     ]);
 
